@@ -14,19 +14,19 @@ const ImageSlider = ({ images }) => {
 
   return (
     <div className="image-slider">
-      <button onClick={prevImage}>Previous</button>
+      <button className="slider-button prev" onClick={prevImage}>Previous</button>
       <div className="images-container">
         {images.map((image, index) => (
           <div
             key={index}
-            className={index === currentIndex ? 'image active' : 'image'}
+            className={`image ${index === currentIndex ? 'active' : ''}`}
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             <img src={image} alt={`Image ${index + 1}`} />
           </div>
         ))}
       </div>
-      <button onClick={nextImage}>Next</button>
+      <button className="slider-button next" onClick={nextImage}>Next</button>
     </div>
   );
 };
