@@ -21,7 +21,7 @@ const Hero = () => {
                     <span className='text-[80px] font-bold text-white'>for everyone</span>
                 </div>
                 <div >
-                    <button className='flex justify-center items-center gap-[15px] w-[300px] h-[70px] rounded-full text-white border-black bg-[#D2042D] hover:bg-black mt-[30px] text-[18px] font-large'>Latest Conenction 
+                    <button className='flex justify-center items-center gap-[15px] w-[300px] h-[70px] rounded-full text-white border-black bg-[#D2042D] hover:bg-black mt-[30px] text-[18px] font-large'>Latest Connection 
                         <div>
                             <img className='' src={arrow} alt="" />
                         </div>
