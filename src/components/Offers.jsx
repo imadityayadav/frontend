@@ -6,10 +6,13 @@ const Offers = () => {
 
 
       <div className='offer-left flex flex-1 flex-col justify-center'>
-        <h1 className='text-[#171717] text-[80px] font-bold'>Exclusive</h1>
-        <h1 className='text-[#171717] text-[22px] font-bold'>Offers for you</h1>
-        <p>ONLY ON BEST SELLER PRODUCTS</p>
-        <button className=' w-[282px] h-[70px] rounded-[35px] bg-[#ff4141] text-white text-[22px] mt-[30px] cursor-pointer'>Check Now</button>
+        <h1 className='text-white ml-2 text-[90px] font-extrabold leading-tight'>Exclusive</h1>
+        <h1 className='text-white ml-20 mb-4 text-[26px] font-semibold tracking-wider'>OFFERS FOR YOU!</h1>
+        <p className='text-white ml-14 text-[18px] font-light mt-[10px]'>ONLY ON BEST SELLER PRODUCTS</p>
+        <button className=' w-[282px] h-[70px] ml-12 rounded-[35px] bg-[#ff4141] text-white text-[22px] mt-[30px] cursor-pointer transition-all
+                          duration-300 ease-in-out transform hover:bg-[#b32727] hover:-translate-y-2'>
+          Check Now
+        </button>
       </div>
 
 
