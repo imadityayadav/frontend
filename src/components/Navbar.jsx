@@ -22,12 +22,15 @@ const Navbar = () => {
     return (
         <div className='navbar flex justify-between items-center p-4 shadow-md bg-white relative'>
             <div className='flex items-center gap-2'>
-                <img className='w-10' src={logo} alt="Logo" />
-                <p className='text-black text-lg md:text-2xl font-semibold'>Shopper's Stop</p>
+                <Link to="/">
+                    <img className='w-10 cursor-pointer' src={logo} alt="Logo" />
+                </Link>
+                <Link to="/">
+                    <p className='text-black text-lg md:text-2xl font-semibold cursor-pointer'>Shopper's Stop</p>
+                </Link>
             </div>
 
             <img className='block md:hidden w-8 cursor-pointer' src={ham} onClick={toggleMenu} alt="Menu" />
-
             
             {isMenuOpen && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 z-50" onClick={closeMenu}>
@@ -56,8 +59,6 @@ const Navbar = () => {
                     </ul>
                 </div>
             )}
-
-
           
             <div className='hidden md:flex items-center gap-6'>
                 <div className='flex gap-6'>
@@ -80,7 +81,6 @@ const Navbar = () => {
 </Link>
                 <Link to='/login'>
                 <button className='px-4 py-2 bg-transparent text-black font-semibold rounded-lg border border-gray-400 hover:bg-black hover:text-white transition duration-300 ease-in-out'>Login</button>
-
                 </Link>
                 <Link to='/cart'>
                     <img className='w-8' src={cart} alt="Cart" />
