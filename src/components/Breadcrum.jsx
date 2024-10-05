@@ -10,7 +10,6 @@ const Breadcrum = (props) => {
   const breadCrumbHandler = (path) => {
     navigate(path);
   };
-  };
 
   return (
     <div className="flex items-center gap-[8px] text-[#5e5e5e] text-[16px] font-bold my-[60px] mx-[170px] capitalize">
@@ -34,4 +33,3 @@ const Breadcrum = (props) => {
 };
 
 export default Breadcrum;
-
