@@ -137,6 +137,11 @@ const Navbar = () => {
         </div>
 
         <Link to="/login">
+          <button className="w-40 h-14 border border-black cursor-pointer font-medium text-lg rounded-full hover:bg-gray-200">
+            Login
+          </button>
+        </Link>
+        <Link to="/login">
           <button className="px-4 py-2 bg-transparent text-black font-semibold rounded-lg border border-gray-400 hover:bg-black hover:text-white transition duration-300 ease-in-out">
             Login
           </button>
@@ -151,5 +156,3 @@ const Navbar = () => {
     </div>
   );
 };
-
-export default Navbar;
