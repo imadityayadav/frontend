@@ -14,16 +14,15 @@ const Footer = () => {
           <p className='text-[#383838] text-3xl md:text-4xl font-bold'>Shopper's Stop</p>
         </div>
       </Link>
-
       <ul className='footer-links flex flex-wrap justify-center gap-5 md:gap-10 text-[#252525] list-none text-base md:text-lg'>
-        <li className='cursor-pointer'>Company</li>
-        <li className='cursor-pointer'>Products</li>
-        <li className='cursor-pointer'>Offices</li>
-        <li className='cursor-pointer'>About</li>
-        <li className='cursor-pointer'>Contact</li>
+        <li className='cursor-pointer transition-colors text-white duration-300 ease-in-out hover:text-indigo-300'>Company</li>
+        <li className='cursor-pointer transition-colors text-white duration-300 ease-in-out hover:text-indigo-300'>Products</li>
+        <li className='cursor-pointer transition-colors text-white duration-300 ease-in-out hover:text-indigo-300'>Offices</li>
+        <li className='cursor-pointer transition-colors text-white duration-300 ease-in-out hover:text-indigo-300'>About</li>
+        <li className='cursor-pointer transition-colors text-white duration-300 ease-in-out hover:text-indigo-300'>Contact</li>
       </ul>
 
-      <div className='flex justify-center gap-5'>
+      <div className='flex justify-center gap-5 '>
         <div className='p-2 cursor-pointer'>
           <img src={insticon} alt="Instagram Icon" className='w-8 h-auto' />
         </div>
