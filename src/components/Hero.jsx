@@ -17,7 +17,7 @@ const Hero = () => {
                     <span className='text-[40px] md:text-[60px] lg:text-[80px] font-bold text-white'>collections</span>
                     <span className='text-[40px] md:text-[60px] lg:text-[80px] font-bold text-white'>for everyone</span>
                 </div>
-                <button className='flex justify-center items-center gap-[15px] w-[300px] h-[70px] rounded-full text-white border-black bg-[#D2042D] hover:bg-black mt-[30px] text-[18px] font-large'>Latest Conenction 
+                <button className='flex justify-center items-center gap-[15px] w-[300px] h-[70px] rounded-full text-white border-black bg-[#D2042D] hover:bg-black mt-[30px] text-[18px] font-large'>Latest Collection 
                         <div>
                             <img className='' src={arrow} alt="" />
                         </div>
