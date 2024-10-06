@@ -1,9 +1,12 @@
 import React, { useContext, useRef, useState } from 'react';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import logo from './assets/logo.png';
 import cart from './assets/cart_icon.png';
 import { Link } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
 import ham from './assets/ham.png';
+import DarkModeToggle from '../pages/DarkModeToggle';
+
 
 const Navbar = () => {
     const [menu, setMenu] = useState("shop");
@@ -20,12 +23,12 @@ const Navbar = () => {
     };
 
     return (
-        <div className='navbar flex justify-between items-center p-4 shadow-md bg-white relative'>
+        <div className='navbar flex justify-between items-center p-4 shadow-md relative'>
             <div className='flex items-center gap-2'>
                 <img className='w-10' src={logo} alt="Logo" />
-                <p className='text-black text-lg md:text-2xl font-semibold'>Shopper's Stop</p>
+                <p className='text-lg md:text-2xl font-semibold'>Shopper's Stop</p>
             </div>
-
+            
             <img className='block md:hidden w-8 cursor-pointer' src={ham} onClick={toggleMenu} alt="Menu" />
 
             
@@ -50,7 +53,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link to='/login'>
-                                <button className='w-full rounded-[8px] bg-[#399bfd] py-[8px] text-white font-medium'>Login</button>
+                                <button className='w-full rounded-[8px] border-black bg-[#399bfd] py-[8px] text-white font-medium'>Login</button>
                             </Link>
                         </li>
                     </ul>
@@ -61,31 +64,32 @@ const Navbar = () => {
           
             <div className='hidden md:flex items-center gap-6'>
                 <div className='flex gap-6'>
+                    <DarkModeToggle/>
                     <Link to="/">
-                        <button onClick={() => setMenu("shop")} className={`text-black ${menu === "shop" ? "font-bold" : ""}`}>Shop</button>
+                        <button onClick={() => setMenu("shop")} className={`${menu === "shop" ? "font-bold" : ""}`}>Shop</button>
                     </Link>
                     <Link to="/men">
-                        <button onClick={() => setMenu("men")} className={`text-black ${menu === "men" ? "font-bold" : ""}`}>Men</button>
+                        <button onClick={() => setMenu("men")} className={`${menu === "men" ? "font-bold" : ""}`}>Men</button>
                     </Link>
                     <Link to="/kids">
-                        <button onClick={() => setMenu("kids")} className={`text-black ${menu === "kids" ? "font-bold" : ""}`}>Kids</button>
+                        <button onClick={() => setMenu("kids")} className={`${menu === "kids" ? "font-bold" : ""}`}>Kids</button>
                     </Link>
                     <Link to="/women">
-                        <button onClick={() => setMenu("women")} className={`text-black ${menu === "women" ? "font-bold" : ""}`}>Women</button>
+                        <button onClick={() => setMenu("women")} className={` ${menu === "women" ? "font-bold" : ""}`}>Women</button>
                     </Link>
                 </div>
                 
                 <Link to='/login'>
-                    <button className='w-40 h-14 border border-black cursor-pointer font-medium text-lg rounded-full hover:bg-gray-200'>Login</button>
+                      <button className='w-40 h-14 border border-black cursor-pointer font-medium text-lg rounded-full hover:bg-gray-200'>Login</button>
 </Link>
                 <Link to='/login'>
-                <button className='px-4 py-2 bg-transparent text-black font-semibold rounded-lg border border-gray-400 hover:bg-black hover:text-white transition duration-300 ease-in-out'>Login</button>
+                <button className='px-4 py-2 bg-transparent font-semibold rounded-lg border border-gray-400 transition duration-300 ease-in-out'>Login</button>
 
                 </Link>
                 <Link to='/cart'>
-                    <img className='w-8' src={cart} alt="Cart" />
+                    <ShoppingCartIcon fontSize="large"/>
                 </Link>
-                <div className='flex justify-center items-center w-5 h-5 mt-[-10px] ml-[-25px] text-xs rounded-full bg-[#FF4141] text-white'>
+                <div className='flex justify-center items-center w-5 h-5 mt-[-10px] ml-[-25px] text-xs rounded-full'>
                     {getTotalCartItems()}
                 </div>
             </div>

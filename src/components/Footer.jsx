@@ -4,6 +4,9 @@ import insticon from './assets/instagram_icon.png';
 import pintrest from './assets/pintester_icon.png';
 import whatsapp from './assets/whatsapp_icon.png';
 import { Link } from 'react-router-dom';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import PinterestIcon from '@mui/icons-material/Pinterest';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const Footer = () => {
   return (
@@ -11,11 +14,11 @@ const Footer = () => {
       <Link to='/'>
         <div className='flex items-center gap-5 cursor-pointer'>
           <img className='w-16 h-auto' src={footer_logo} alt="Footer Logo" />
-          <p className='text-[#383838] text-3xl md:text-4xl font-bold'>Shopper's Stop</p>
+          <p className=' text-3xl md:text-4xl font-bold'>Shopper's Stop</p>
         </div>
       </Link>
 
-      <ul className='footer-links flex flex-wrap justify-center gap-5 md:gap-10 text-[#252525] list-none text-base md:text-lg'>
+      <ul className='footer-links flex flex-wrap justify-center gap-5 md:gap-10 list-none text-base md:text-lg'>
         <li className='cursor-pointer'>Company</li>
         <li className='cursor-pointer'>Products</li>
         <li className='cursor-pointer'>Offices</li>
@@ -25,19 +28,19 @@ const Footer = () => {
 
       <div className='flex justify-center gap-5'>
         <div className='p-2 cursor-pointer'>
-          <img src={insticon} alt="Instagram Icon" className='w-8 h-auto' />
+          <InstagramIcon fontSize="large" />
         </div>
         <div className='p-2 cursor-pointer'>
-          <img src={pintrest} alt="Pinterest Icon" className='w-8 h-auto' />
+          <PinterestIcon fontSize="large" />
         </div>
         <div className='p-2 cursor-pointer'>
-          <img src={whatsapp} alt="WhatsApp Icon" className='w-8 h-auto' />
+          <WhatsAppIcon fontSize="large" />
         </div>
       </div>
 
-      <div className='flex flex-col items-center gap-6 w-full mb-8 text-[#1a1a1a] text-base md:text-lg'>
+      <div className='flex flex-col items-center gap-6 w-full mb-8 text-base md:text-lg'>
         <div className="w-[90%] md:w-[80%] h-[3px] bg-[#57697b99] mt-6"></div>
-        <hr className='w-[90%] md:w-[80%] border-none rounded-[10px] h-[3px] text-[#000000cc]' />
+        <hr className='w-[90%] md:w-[80%] border-none rounded-[10px] h-[3px] ' />
         <p className='text-center'>Copyright @ 2024 - All Right Reserved</p>
       </div>
     </div>

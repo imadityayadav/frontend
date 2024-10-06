@@ -25,6 +25,7 @@ const Hero = () => {
             </div>
 
             {/* Right Side - Hero Image */}
+            
             <div className='hero-right w-full md:w-2/5 flex justify-center'>
                 <img className='w-full h-auto max-w-[600px]' src={heroimg} alt="Hero" />
             </div>

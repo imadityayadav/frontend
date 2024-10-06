@@ -49,14 +49,14 @@ const ProductDisplay = (props) => {
           <h1 className='mt-[55px] font-bold text-[#656565] text-lg lg:text-[20px]'>Select Size</h1>
           <div className='flex my-6 mx-0 gap-4'>
             {['S', 'M', 'L', 'XL', 'XXL'].map((size) => (
-              <div key={size} className='py-4 px-6 bg-[#fbfbfb] border-[1px] border-[#ebebeb] rounded-sm cursor-pointer hover:bg-[#1c1c1c] hover:text-white'>
+              <div key={size} className='py-4 px-6  border-[1px] border-[#ebebeb] rounded-sm cursor-pointer hover:bg-[#1c1c1c] hover:text-white'>
                 {size}
               </div>
             ))}
           </div>
         </div>
 
-        <button onClick={() => { addToCart(product.id) }} className='py-4 px-6 w-full lg:w-[200px] text-[16px] font-bold text-white bg-[#ff4141] mb-[40px] cursor-pointer'>
+        <button onClick={() => { addToCart(product.id) }} className='py-4 px-6 w-full lg:w-[200px] text-[16px] font-bold bg-[#ff4141] mb-[40px] cursor-pointer'>
           ADD TO CART
         </button>
         <p className='mt-2'>
