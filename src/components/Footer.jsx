@@ -22,7 +22,7 @@ const Footer = () => {
         <li className='cursor-pointer transition-colors text-white duration-300 ease-in-out hover:text-indigo-300'>Contact</li>
       </ul>
 
-      <div className='flex justify-center gap-5 '>
+      <div className='flex justify-center gap-5'>
         <div className='p-2 cursor-pointer'>
           <img src={insticon} alt="Instagram Icon" className='w-8 h-auto' />
         </div>
