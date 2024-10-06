@@ -1,17 +1,38 @@
 import React, { useContext, useRef, useState } from "react";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import logo from "./assets/logo.png";
 import cart from "./assets/cart_icon.png";
-import { Link } from "react-router-dom";
+import search from "./assets/search.png";
+import { Link, useNavigate } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import ham from "./assets/ham.png";
 import DarkModeToggle from "../pages/DarkModeToggle";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [menu, setMenu] = useState("shop");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { getTotalCartItems } = useContext(ShopContext);
   const menuRef = useRef();
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // State to track if the page has been scrolled
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Detect scroll and toggle `isScrolled` state
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -21,8 +42,25 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  const handleLoginClick = () => {
+    setIsLoginOpen(true);
+    setTimeout(() => {
+      setIsLoginOpen(false);
+      navigate(0); // This will refresh the page
+    }, 500);
+  };
+
+  const handleSearch = () => {
+    setIsSearchOpen((prev) => !prev);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search?q=${searchTerm}`);
+  };
+
   return (
-    <div className="navbar fixed top-0 left-0 w-full flex justify-between items-center p-4 shadow-md bg- z-50">
+    <div className="navbar fixed top-0 left-0 w-full flex justify-between items-center p-4 shadow-md bg-white z-50">
       <div className="flex items-center gap-2">
         <img className="w-10" src={logo} alt="Logo" />
         <p className="text- text-lg md:text-2xl font-semibold">
@@ -53,7 +91,15 @@ const Navbar = () => {
                 closeMenu();
               }}
             >
-              <Link to="/">Shop</Link>
+              <Link to="/">
+                <span
+                  className={`hover:text-[#FF4141] transition duration-300 ease-in-out ${
+                    menu === "shop" ? "text-[#FF4141]" : ""
+                  }`}
+                >
+                  Shop
+                </span>
+              </Link>
               {menu === "shop" && (
                 <hr className="w-4/5 h-1 rounded-sm bg-[#FF4141]" />
               )}
@@ -64,7 +110,15 @@ const Navbar = () => {
                 closeMenu();
               }}
             >
-              <Link to="/men">Men</Link>
+              <Link to="/men">
+                <span
+                  className={`hover:text-[#FF4141] transition duration-300 ease-in-out ${
+                    menu === "men" ? "text-[#FF4141]" : ""
+                  }`}
+                >
+                  Men
+                </span>
+              </Link>
               {menu === "men" && (
                 <hr className="w-4/5 h-1 rounded-sm bg-[#FF4141]" />
               )}
@@ -75,7 +129,15 @@ const Navbar = () => {
                 closeMenu();
               }}
             >
-              <Link to="/kids">Kids</Link>
+              <Link to="/kids">
+                <span
+                  className={`hover:text-[#FF4141] transition duration-300 ease-in-out ${
+                    menu === "kids" ? "text-[#FF4141]" : ""
+                  }`}
+                >
+                  Kids
+                </span>
+              </Link>
               {menu === "kids" && (
                 <hr className="w-4/5 h-1 rounded-sm bg-[#FF4141]" />
               )}
@@ -86,14 +148,22 @@ const Navbar = () => {
                 closeMenu();
               }}
             >
-              <Link to="/women">Women</Link>
+              <Link to="/women">
+                <span
+                  className={`hover:text-[#FF4141] transition duration-300 ease-in-out ${
+                    menu === "women" ? "text-[#FF4141]" : ""
+                  }`}
+                >
+                  Women
+                </span>
+              </Link>
               {menu === "women" && (
                 <hr className="w-4/5 h-1 rounded-sm bg-[#FF4141]" />
               )}
             </li>
             <li>
               <Link to="/login">
-                <button className="w-full rounded-[8px] bg-[#399bfd] py-[8px] text- font-medium">
+                <button className="w-full rounded-[8px] bg-[#399bfd] py-[8px] text-white font-medium">
                   Login
                 </button>
               </Link>
@@ -103,12 +173,43 @@ const Navbar = () => {
       )}
 
       <div className="hidden md:flex items-center gap-6">
+        {/* Search Input */}
+        <div className="flex items-center">
+          <img
+            className="w-6 h-6 cursor-pointer"
+            src={search}
+            onClick={handleSearch}
+            alt="Search"
+          />
+          {isSearchOpen && (
+            <form
+              onSubmit={handleSearchSubmit}
+              className="relative ml-2 flex items-center"
+            >
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                type="submit"
+                className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                Search
+              </button>
+            </form>
+          )}
+        </div>
+
+        {/* Menu items */}
         <div className="flex gap-6">
           <DarkModeToggle/>
           <Link to="/">
             <button
               onClick={() => setMenu("shop")}
-              className={`text- ${menu === "shop" ? "font-bold" : ""}`}
+              className={`text-black ${menu === "shop" ? "font-bold" : ""}`}
             >
               Shop
             </button>
@@ -116,7 +217,7 @@ const Navbar = () => {
           <Link to="/men">
             <button
               onClick={() => setMenu("men")}
-              className={`text- ${menu === "men" ? "font-bold" : ""}`}
+              className={`text-black ${menu === "men" ? "font-bold" : ""}`}
             >
               Men
             </button>
@@ -124,7 +225,7 @@ const Navbar = () => {
           <Link to="/kids">
             <button
               onClick={() => setMenu("kids")}
-              className={`text- ${menu === "kids" ? "font-bold" : ""}`}
+              className={`text-black ${menu === "kids" ? "font-bold" : ""}`}
             >
               Kids
             </button>
@@ -132,14 +233,15 @@ const Navbar = () => {
           <Link to="/women">
             <button
               onClick={() => setMenu("women")}
-              className={`text- ${menu === "women" ? "font-bold" : ""}`}
+              className={`text-black ${menu === "women" ? "font-bold" : ""}`}
             >
               Women
             </button>
           </Link>
         </div>
+
         <Link to="/login">
-          <button className="px-4 py-2 bg-transparent text- font-semibold rounded-lg border border-gray-400 hover:bg-black hover:text-white transition duration-300 ease-in-out">
+          <button className="px-4 py-2 bg-transparent text-black font-semibold rounded-lg border border-gray-400 hover:bg-black hover:text-white transition duration-300 ease-in-out">
             Login
           </button>
         </Link>
