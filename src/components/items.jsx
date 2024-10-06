@@ -8,7 +8,7 @@ const Items = (props) => {
                 <img className='w-full h-auto max-[1280px]:w-full max-[1024px]:w-full max-[800px]:w-full max-[500px]:w-full' src={props.image} alt={props.name} />
             </Link>
             <p className='mt-2 mb-2 text-center'>{props.name}</p>
-            <div className='item-prices flex justify-between items-center'>
+            <div className='item-prices flex justify-between items-center px-4'>
                 <div className='item-price-new text-[#374151] text-[18px] font-bold max-[1280px]:text-[14px] max-[1024px]:text-[13px] max-[800px]:text-[12px]'>
                     ${props.new_price}
                 </div>
