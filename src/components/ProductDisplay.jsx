@@ -36,7 +36,7 @@ const ProductDisplay = (props) => {
           <div className='text-[#818181] line-through'>
             ${product.old_price}
           </div>
-          <div className='text-[#ff4141]'>
+          <div className='text-'>
             ${product.new_price}
           </div>
         </div>
@@ -46,10 +46,10 @@ const ProductDisplay = (props) => {
         </div>
 
         <div>
-          <h1 className='mt-[55px] font-bold text-[#656565] text-lg lg:text-[20px]'>Select Size</h1>
+          <h1 className='mt-[55px] font-bold text- text-lg lg:text-[20px]'>Select Size</h1>
           <div className='flex my-6 mx-0 gap-4'>
             {['S', 'M', 'L', 'XL', 'XXL'].map((size) => (
-              <div key={size} className='py-4 px-6 bg-[#fbfbfb] border-[1px] border-[#ebebeb] rounded-sm cursor-pointer hover:bg-[#1c1c1c] hover:text-white'>
+              <div key={size} className='py-4 px-6 bg- border-[1px] border-[#ebebeb] rounded-sm cursor-pointer hover:bg-[#1c1c1c] hover:text-white'>
                 {size}
               </div>
             ))}

@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.1.2",
+    "@mui/material": "^6.1.2",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
     "hamburger-react": "^2.5.0",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.9",

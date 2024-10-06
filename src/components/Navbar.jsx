@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import logo from "./assets/logo.png";
 import cart from "./assets/cart_icon.png";
 import search from "./assets/search.png";
 import { Link, useNavigate } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import ham from "./assets/ham.png";
+import DarkModeToggle from "../pages/DarkModeToggle";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -59,14 +60,10 @@ const Navbar = () => {
   };
 
   return (
-    <div
-      className={`navbar fixed top-0 left-0 w-full flex justify-between items-center p-4 shadow-md bg-white z-50 transition-all duration-500 ease-in-out ${
-        isScrolled ? "backdrop-blur-md bg-opacity-70" : ""
-      }`}
-    >
+    <div className="navbar fixed top-0 left-0 w-full flex justify-between items-center p-4 shadow-md bg-white z-50">
       <div className="flex items-center gap-2">
         <img className="w-10" src={logo} alt="Logo" />
-        <p className="text-black text-lg md:text-2xl font-semibold">
+        <p className="text- text-lg md:text-2xl font-semibold">
           Shopper's Stop
         </p>
       </div>
@@ -166,10 +163,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link to="/login">
-                <button
-                  className="w-full rounded-[8px] bg-[#399bfd] py-[8px] text-white font-medium"
-                  onClick={handleLoginClick}
-                >
+                <button className="w-full rounded-[8px] bg-[#399bfd] py-[8px] text-white font-medium">
                   Login
                 </button>
               </Link>
@@ -211,12 +205,11 @@ const Navbar = () => {
 
         {/* Menu items */}
         <div className="flex gap-6">
+          <DarkModeToggle/>
           <Link to="/">
             <button
               onClick={() => setMenu("shop")}
-              className={`text-black hover:text-[#FF4141] transition duration-300 ease-in-out ${
-                menu === "shop" ? "font-bold" : ""
-              }`}
+              className={`text-black ${menu === "shop" ? "font-bold" : ""}`}
             >
               Shop
             </button>
@@ -224,9 +217,7 @@ const Navbar = () => {
           <Link to="/men">
             <button
               onClick={() => setMenu("men")}
-              className={`text-black hover:text-[#FF4141] transition duration-300 ease-in-out ${
-                menu === "men" ? "font-bold" : ""
-              }`}
+              className={`text-black ${menu === "men" ? "font-bold" : ""}`}
             >
               Men
             </button>
@@ -234,9 +225,7 @@ const Navbar = () => {
           <Link to="/kids">
             <button
               onClick={() => setMenu("kids")}
-              className={`text-black hover:text-[#FF4141] transition duration-300 ease-in-out ${
-                menu === "kids" ? "font-bold" : ""
-              }`}
+              className={`text-black ${menu === "kids" ? "font-bold" : ""}`}
             >
               Kids
             </button>
@@ -244,9 +233,7 @@ const Navbar = () => {
           <Link to="/women">
             <button
               onClick={() => setMenu("women")}
-              className={`text-black hover:text-[#FF4141] transition duration-300 ease-in-out ${
-                menu === "women" ? "font-bold" : ""
-              }`}
+              className={`text-black ${menu === "women" ? "font-bold" : ""}`}
             >
               Women
             </button>
@@ -254,19 +241,14 @@ const Navbar = () => {
         </div>
 
         <Link to="/login">
-          <button
-            className={`px-4 py-2 bg-transparent text-black font-semibold rounded-lg border border-gray-400 hover:bg-black hover:text-white transition duration-300 ease-in-out ${
-              isLoginOpen ? "animate-jacket-open" : ""
-            }`}
-            onClick={handleLoginClick}
-          >
+          <button className="px-4 py-2 bg-transparent text-black font-semibold rounded-lg border border-gray-400 hover:bg-black hover:text-white transition duration-300 ease-in-out">
             Login
           </button>
         </Link>
         <Link to="/cart">
-          <img className="w-8" src={cart} alt="Cart" />
+          <ShoppingCartIcon fontSize="large"/>
         </Link>
-        <div className="flex justify-center items-center w-5 h-5 mt-[-10px] ml-[-25px] text-xs rounded-full bg-[#FF4141] text-white">
+        <div className="flex justify-center items-center w-5 h-5 mt-[-10px] ml-[-25px] text-xs rounded-full bg-[#FF4141] text">
           {getTotalCartItems()}
         </div>
       </div>
