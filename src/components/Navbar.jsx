@@ -142,6 +142,9 @@ const Navbar = () => {
             >
               Shop
             </button>
+            {menu === "shop" && (
+              <hr className="w-4/5 h-1 rounded-sm bg-[#FF4141]" />
+            )}
           </Link>
           <Link to="/men">
             <button
@@ -150,6 +153,9 @@ const Navbar = () => {
             >
               Men
             </button>
+            {menu === "men" && (
+              <hr className="w-4/5 h-1 rounded-sm bg-[#FF4141]" />
+            )}
           </Link>
           <Link to="/kids">
             <button
@@ -158,6 +164,9 @@ const Navbar = () => {
             >
               Kids
             </button>
+            {menu === "kids" && (
+              <hr className="w-4/5 h-1 rounded-sm bg-[#FF4141]" />
+            )}
           </Link>
           <Link to="/women">
             <button
@@ -166,6 +175,9 @@ const Navbar = () => {
             >
               Women
             </button>
+            {menu === "women" && (
+              <hr className="w-4/5 h-1 rounded-sm bg-[#FF4141]" />
+            )}
           </Link>
           {/* New About Us Link */}
           <Link to="/about">
