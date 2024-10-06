@@ -37,7 +37,7 @@ const Navbar = () => {
 
 
                 <Link to='/login'>
-                <button className='px-4 py-2 bg-transparent text-black font-semibold rounded-lg border border-gray-400 hover:bg-black hover:text-white transition duration-300 ease-in-out'>Login</button>
+                <button className='w-[157px] h-[58px] border-[1px] border-black cursor-pointer font-medium text-[20px] rounded-full active:bg-[gray] hover:bg-black hover:text-white max-[1280px]:w-[120px] max-[1280px]:h-[45px] max-[1280px]:text-[16px] max-[1024px]:w-[80px] max-[1024px]:h-[35px] max-[1024px]:text-[14px]'>Login</button>
                 </Link>
 
 
