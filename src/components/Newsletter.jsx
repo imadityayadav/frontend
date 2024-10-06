@@ -6,13 +6,13 @@ const Newsletter = () => {
       <h1 className='text-[#454545] text-4xl md:text-[55px] font-bold text-center'>Get Exclusive Offers on Your Email</h1>
       <p className='text-[#454545] text-base md:text-[22px] text-center'>Subscribe to our Newsletter to stay Updated</p>
 
-      <div className='flex items-center justify-between bg-white w-full max-w-lg h-[70px] rounded-full border-[1px] border-[#e3e3e3]'>
+      <div className='flex items-center justify-between bg-white w-screen max-w-lg h-[70px] rounded-full border-[1px] border-[#e3e3e3]'>
         <input 
           className='flex-1 ml-5 border-0 text-[#616161] font-poppins text-[16px] outline-none' 
           type="email" 
           placeholder='Enter Your Email' 
         />
-        <button className='w-[150px] h-full bg-black text-white text-[16px] cursor-pointer rounded-full'>Subscribe</button>
+        <button className='w-[100px] h-full bg-black text-white text-[14px] cursor-pointer rounded-full px-2 '>Subscribe</button>
       </div>
     </div>
   );

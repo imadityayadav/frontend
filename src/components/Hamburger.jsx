@@ -12,6 +12,7 @@ const HamburgerMenu = () => {
       <a className="menu-item" href="/login">
         <p className='login-button'>Log in</p>
       </a>
+      <a></a>
     </Menu>
   );
 };
