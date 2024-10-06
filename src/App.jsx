@@ -13,8 +13,6 @@ import women from './components/assets/banner_women.png'
 import kids from './components/assets/banner_kids.png'
 import AboutPage from "./pages/AboutPage";
 
-import women from "./components/assets/banner_women.png";
-import kids from "./components/assets/banner_kids.png";
 
 
 function App() {
