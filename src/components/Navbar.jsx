@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState, useEffect } from "react"; // Added useEffect
+import React, { useContext, useRef, useState, useEffect } from "react";
 import logo from "./assets/logo.png";
 import cart from "./assets/cart_icon.png";
 import search from "./assets/search.png";
@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import ham from "./assets/ham.png";
 import DarkModeToggle from "../pages/DarkModeToggle";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'; // Importing the icon
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"; // Importing the icon
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -68,9 +68,7 @@ const Navbar = () => {
     >
       <div className="flex items-center gap-2">
         <img className="w-10" src={logo} alt="Logo" />
-        <p className="text- text-lg md:text-2xl font-semibold">
-          Shopper's Stop
-        </p>
+        <p className="text-lg md:text-2xl font-semibold">Shopper's Stop</p>
       </div>
 
       <img
@@ -98,16 +96,13 @@ const Navbar = () => {
             >
               <Link to="/">
                 <span
-                  className={`hover:text-[#FF4141] transition duration-300 ease-in-out ${
-                    menu === "shop" ? "text-[#FF4141]" : ""
+                  className={`hover:text-[#FF4141] hover:underline transition duration-300 ease-in-out ${
+                    menu === "shop" ? "text-[#FF4141] underline" : ""
                   }`}
                 >
                   Shop
                 </span>
               </Link>
-              {menu === "shop" && (
-                <hr className="w-4/5 h-1 rounded-sm bg-[#FF4141]" />
-              )}
             </li>
             <li
               onClick={() => {
@@ -117,16 +112,13 @@ const Navbar = () => {
             >
               <Link to="/men">
                 <span
-                  className={`hover:text-[#FF4141] transition duration-300 ease-in-out ${
-                    menu === "men" ? "text-[#FF4141]" : ""
+                  className={`hover:text-[#FF4141] hover:underline transition duration-300 ease-in-out ${
+                    menu === "men" ? "text-[#FF4141] underline" : ""
                   }`}
                 >
                   Men
                 </span>
               </Link>
-              {menu === "men" && (
-                <hr className="w-4/5 h-1 rounded-sm bg-[#FF4141]" />
-              )}
             </li>
             <li
               onClick={() => {
@@ -136,16 +128,13 @@ const Navbar = () => {
             >
               <Link to="/kids">
                 <span
-                  className={`hover:text-[#FF4141] transition duration-300 ease-in-out ${
-                    menu === "kids" ? "text-[#FF4141]" : ""
+                  className={`hover:text-[#FF4141] hover:underline transition duration-300 ease-in-out ${
+                    menu === "kids" ? "text-[#FF4141] underline" : ""
                   }`}
                 >
                   Kids
                 </span>
               </Link>
-              {menu === "kids" && (
-                <hr className="w-4/5 h-1 rounded-sm bg-[#FF4141]" />
-              )}
             </li>
             <li
               onClick={() => {
@@ -155,16 +144,13 @@ const Navbar = () => {
             >
               <Link to="/women">
                 <span
-                  className={`hover:text-[#FF4141] transition duration-300 ease-in-out ${
-                    menu === "women" ? "text-[#FF4141]" : ""
+                  className={`hover:text-[#FF4141] hover:underline transition duration-300 ease-in-out ${
+                    menu === "women" ? "text-[#FF4141] underline" : ""
                   }`}
                 >
                   Women
                 </span>
               </Link>
-              {menu === "women" && (
-                <hr className="w-4/5 h-1 rounded-sm bg-[#FF4141]" />
-              )}
             </li>
             <li>
               <Link to="/login">
@@ -214,7 +200,11 @@ const Navbar = () => {
           <Link to="/">
             <button
               onClick={() => setMenu("shop")}
-              className={`text-black ${menu === "shop" ? "font-bold" : ""}`}
+              className={`text-black ${
+                menu === "shop"
+                  ? "font-bold underline"
+                  : "hover:underline hover:text-[#FF4141] transition duration-300 ease-in-out"
+              }`}
             >
               Shop
             </button>
@@ -222,7 +212,11 @@ const Navbar = () => {
           <Link to="/men">
             <button
               onClick={() => setMenu("men")}
-              className={`text-black ${menu === "men" ? "font-bold" : ""}`}
+              className={`text-black ${
+                menu === "men"
+                  ? "font-bold underline"
+                  : "hover:underline hover:text-[#FF4141] transition duration-300 ease-in-out"
+              }`}
             >
               Men
             </button>
@@ -230,7 +224,11 @@ const Navbar = () => {
           <Link to="/kids">
             <button
               onClick={() => setMenu("kids")}
-              className={`text-black ${menu === "kids" ? "font-bold" : ""}`}
+              className={`text-black ${
+                menu === "kids"
+                  ? "font-bold underline"
+                  : "hover:underline hover:text-[#FF4141] transition duration-300 ease-in-out"
+              }`}
             >
               Kids
             </button>
@@ -238,7 +236,11 @@ const Navbar = () => {
           <Link to="/women">
             <button
               onClick={() => setMenu("women")}
-              className={`text-black ${menu === "women" ? "font-bold" : ""}`}
+              className={`text-black ${
+                menu === "women"
+                  ? "font-bold underline"
+                  : "hover:underline hover:text-[#FF4141] transition duration-300 ease-in-out"
+              }`}
             >
               Women
             </button>
