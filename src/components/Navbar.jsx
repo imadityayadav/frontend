@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef, useState, useEffect } from "react"; // Added useEffect
 import logo from "./assets/logo.png";
 import cart from "./assets/cart_icon.png";
 import search from "./assets/search.png";
@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import ham from "./assets/ham.png";
 import DarkModeToggle from "../pages/DarkModeToggle";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'; // Importing the icon
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -60,7 +61,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar fixed top-0 left-0 w-full flex justify-between items-center p-4 shadow-md bg-white z-50">
+    <div
+      className={`navbar fixed top-0 left-0 w-full flex justify-between items-center p-4 shadow-md z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white bg-opacity-70 backdrop-blur-md" : "bg-white"
+      }`}
+    >
       <div className="flex items-center gap-2">
         <img className="w-10" src={logo} alt="Logo" />
         <p className="text- text-lg md:text-2xl font-semibold">
@@ -205,7 +210,7 @@ const Navbar = () => {
 
         {/* Menu items */}
         <div className="flex gap-6">
-          <DarkModeToggle/>
+          <DarkModeToggle />
           <Link to="/">
             <button
               onClick={() => setMenu("shop")}
@@ -246,7 +251,7 @@ const Navbar = () => {
           </button>
         </Link>
         <Link to="/cart">
-          <ShoppingCartIcon fontSize="large"/>
+          <ShoppingCartIcon fontSize="large" />
         </Link>
         <div className="flex justify-center items-center w-5 h-5 mt-[-10px] ml-[-25px] text-xs rounded-full bg-[#FF4141] text">
           {getTotalCartItems()}
