@@ -12,7 +12,7 @@ const Breadcrum = (props) => {
   };
 
   return (
-    <div className="flex items-center gap-[8px] text-[#5e5e5e] text-[16px] font-bold my-[60px] mx-[170px] capitalize">
+    <div className=" gap-[8px] text-[#5e5e5e] text-[16px] font-bold my-[60px] mx-[170px] capitalize">
       <div className="cursor-pointer hover:text-[#EB423F]" onClick={() => breadCrumbHandler("/")}>
         Home
       </div>
