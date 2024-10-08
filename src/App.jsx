@@ -9,13 +9,8 @@ import Cart from "./pages/Cart";
 import Footer from "./components/Footer";
 import men_banner from "./components/assets/banner_mens.png";
 
-import women from "./components/assets/banner_women.png";
-import kids from "./components/assets/banner_kids.png";
-import AboutPage from "./pages/AboutPage";
-
-
-import women from './components/assets/banner_women.png'
-import kids from './components/assets/banner_kids.png'
+import women_banner from "./components/assets/banner_women.png";
+import kids_banner from "./components/assets/banner_kids.png";
 import AboutPage from "./pages/AboutPage";
 
 
@@ -35,11 +30,11 @@ function App() {
           />
           <Route
             path="/kids"
-            element={<ShopCategory banner={kids} category="kids" />}
+            element={<ShopCategory banner={kids_banner} category="kids" />}
           />
           <Route
             path="/women"
-            element={<ShopCategory banner={women} category="women" />}
+            element={<ShopCategory banner={women_banner} category="women" />}
           />
           <Route path="/product" element={<Product />}>
             <Route path=":productId" element={<Product />} />
