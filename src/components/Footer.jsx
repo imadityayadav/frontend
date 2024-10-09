@@ -10,7 +10,12 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const Footer = () => {
   return (
-    <div className='flex flex-col justify-center items-center gap-10 pt-24 px-5'>
+    <div
+      className='flex flex-col justify-center items-center gap-10 pt-24 px-5'
+      style={{
+        background: 'linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1))',
+      }}
+    >
       <Link to='/'>
         <div className='flex items-center gap-5 cursor-pointer'>
           <img className='w-16 h-auto' src={footer_logo} alt="Footer Logo" />
