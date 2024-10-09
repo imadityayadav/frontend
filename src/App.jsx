@@ -8,14 +8,9 @@ import LoginSignup from "./pages/LoginSignup";
 import Cart from "./pages/Cart";
 import Footer from "./components/Footer";
 import men_banner from "./components/assets/banner_mens.png";
-
-import women from './components/assets/banner_women.png'
-import kids from './components/assets/banner_kids.png'
-import AboutPage from "./pages/AboutPage";
-
 import women from "./components/assets/banner_women.png";
-import kids from "./components/assets/banner_kids.png";
-
+import kids from "./components/assets/banner_kids.png";  
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
@@ -42,6 +37,3 @@ function App() {
 }
 
 export default App;
-
-
-// Done fixing
