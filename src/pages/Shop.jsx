@@ -4,6 +4,8 @@ import Popular from '../components/Popular'
 import Offers from '../components/Offers'
 import Newcollection from '../components/Newcollection'
 import Newsletter from '../components/Newsletter'
+import FAQ from '../pages/FAQ'
+import './FAQ.css'
 
 
 
@@ -20,6 +22,7 @@ const Shop = () => {
       <Newcollection/>
       <Newsletter/>
       
+      <FAQ/>
     </div>
   )
 }
