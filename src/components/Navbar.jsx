@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar fixed top-0 left-0 w-full flex justify-between items-center p-4 shadow-md bg- z-50">
+    <div className="navbar fixed top-0 left-0 w-full flex justify-between items-center p-4 shadow-md bg-white z-50">
       <div className="flex items-center gap-2">
         <img className="w-10" src={logo} alt="Logo" />
         <p className="text- text-lg md:text-2xl font-semibold">
@@ -108,7 +108,7 @@ const Navbar = () => {
           <Link to="/">
             <button
               onClick={() => setMenu("shop")}
-              className={`text- ${menu === "shop" ? "font-bold" : ""}`}
+              className={`text- ${menu === "shop" ? "font-bold" : ""} hover:bg-black hover:text-white`}
             >
               Shop
             </button>
@@ -116,7 +116,7 @@ const Navbar = () => {
           <Link to="/men">
             <button
               onClick={() => setMenu("men")}
-              className={`text- ${menu === "men" ? "font-bold" : ""}`}
+              className={`text- ${menu === "men" ? "font-bold" : ""}hover:bg-black hover:text-white`}
             >
               Men
             </button>
@@ -124,7 +124,7 @@ const Navbar = () => {
           <Link to="/kids">
             <button
               onClick={() => setMenu("kids")}
-              className={`text- ${menu === "kids" ? "font-bold" : ""}`}
+              className={`text- ${menu === "kids" ? "font-bold" : ""}hover:bg-black hover:text-white`}
             >
               Kids
             </button>
@@ -132,7 +132,7 @@ const Navbar = () => {
           <Link to="/women">
             <button
               onClick={() => setMenu("women")}
-              className={`text- ${menu === "women" ? "font-bold" : ""}`}
+              className={`text- ${menu === "women" ? "font-bold" : ""}hover:bg-black hover:text-white`}
             >
               Women
             </button>
