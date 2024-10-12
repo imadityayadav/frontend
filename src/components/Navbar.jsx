@@ -29,7 +29,9 @@ const Navbar = () => {
           Shopper's Stop
         </p>
       </div>
-
+      <div className="ml-52 md:ml-8 lg:ml-auto xl:ml-auto mr-8">
+        <DarkModeToggle />
+      </div>
       <img
         className="block md:hidden w-8 cursor-pointer"
         src={ham}
@@ -104,7 +106,6 @@ const Navbar = () => {
 
       <div className="hidden md:flex items-center gap-6">
         <div className="flex gap-6">
-          <DarkModeToggle />
           <Link to="/">
             <button
               onClick={() => setMenu("shop")}
