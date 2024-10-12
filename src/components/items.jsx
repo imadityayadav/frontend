@@ -16,13 +16,6 @@ const Items = (props) => {
                     ${props.old_price}
                 </div>
             </div>
-            
-            {/* <Link to='/login'>
-                <button className='bg-yellow-300 rounded-full mr-2 w-[100px] mt-2 mb-2'>Buy Now</button>
-            </Link>
-            <Link to='/cart'>
-                <button className='bg-yellow-300 rounded-full w-[120px]'>Add to Cart</button>
-            </Link> */}
         </div>
     );
 };

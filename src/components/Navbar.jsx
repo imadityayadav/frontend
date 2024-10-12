@@ -22,14 +22,16 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar fixed top-0 left-0 w-full flex justify-between items-center p-4 shadow-md bg-white z-50">
+    <div className="navbar fixed top-0 left-0 w-full flex justify-between items-center p-4 shadow-md bg-gray z-50">
       <div className="flex items-center gap-2">
         <img className="w-10" src={logo} alt="Logo" />
-        <p className="text- text-lg md:text-2xl font-semibold">
+        <p className="text- text-lg md:text-2xl font-semibold hidden sm:block">
           Shopper's Stop
         </p>
       </div>
-
+      <div className="ml-52 md:ml-8 lg:ml-auto xl:ml-auto mr-8">
+        <DarkModeToggle />
+      </div>
       <img
         className="block md:hidden w-8 cursor-pointer"
         src={ham}
@@ -39,7 +41,7 @@ const Navbar = () => {
 
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-50"
+          className="fixed inset-0 bg-opacity-50 z-50"
           onClick={closeMenu}
         >
           <ul
@@ -104,7 +106,6 @@ const Navbar = () => {
 
       <div className="hidden md:flex items-center gap-6">
         <div className="flex gap-6">
-          <DarkModeToggle/>
           <Link to="/">
             <button
               onClick={() => setMenu("shop")}

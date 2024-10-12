@@ -8,8 +8,8 @@ const Hero = () => {
         <div className='gradeint flex flex-col md:flex-row w-full'>
             {/* Left Side */}
             <div className='flex flex-col justify-center gap-5 md:pl-36 lg:pl-48 w-full md:w-3/5 px-5'>
-                <h2 className='text-white text-[22px] md:text-[26px] font-semibold'>New Arrivals Only</h2>
-                <div className='flex flex-col leading-tight'>
+                <h2 className='text-white text-[22px] md:text-[26px] font-semibold mt-6'>New Arrivals Only</h2>
+                <div className='flex flex-col leading-tight sm:bg-center mx-auto sm:mx-0'>
                     <div className='flex items-center gap-5'>
                         <p className='text-[60px] md:text-[80px] lg:text-[100px] font-bold text-white'>new</p>
                         <img className='w-[60px] md:w-[105px]' src={hand} alt="Hand Icon" />
@@ -17,7 +17,7 @@ const Hero = () => {
                     <span className='text-[40px] md:text-[60px] lg:text-[80px] font-bold text-white'>collections</span>
                     <span className='text-[40px] md:text-[60px] lg:text-[80px] font-bold text-white'>for everyone</span>
                 </div>
-                <button className='flex justify-center items-center gap-[15px] w-[300px] h-[70px] rounded-full text-white border-black bg-[#D2042D] hover:bg-black mt-[30px] text-[18px] font-large'>Latest Collection 
+                <button className='flex justify-center items-center gap-[15px] w-[300px] h-[70px] rounded-full text-white border-black bg-[#D2042D] hover:bg-black mt-[30px] text-[18px] font-large mx-auto sm:mx-0'>Latest Collection 
                         <div>
                             <img className='' src={arrow} alt="" />
                         </div>
@@ -25,8 +25,8 @@ const Hero = () => {
             </div>
 
             {/* Right Side - Hero Image */}
-            <div className='hero-right w-full md:w-2/5 flex justify-center'>
-                <img className='w-full h-auto max-w-[600px]' src={heroimg} alt="Hero" />
+            <div className='hero-right w-full md:w-2/5 flex justify-center mt-4'>
+                <img className='w-full h-auto max-w-[600px] mx-auto sm:mx-0' src={heroimg} alt="Hero" />
             </div>
 
         </div>
