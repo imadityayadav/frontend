@@ -24,10 +24,10 @@ const Navbar = () => {
   return (
     <div className="navbar fixed top-0 left-0 w-full flex justify-between items-center p-4 shadow-md bg-white z-50">
       <div className="flex items-center gap-2">
-        <img className="w-10" src={logo} alt="Logo" />
-        <p className="text- text-lg md:text-2xl font-semibold">
+        <a href = "https://shopperstop-iota.vercel.app/"><img className="w-10" src={logo} alt="Logo" /></a>
+        <a href = "https://shopperstop-iota.vercel.app/" className="text- text-lg md:text-2xl font-semibold">
           Shopper's Stop
-        </p>
+        </a>
       </div>
 
       <img
