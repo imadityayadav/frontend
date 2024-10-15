@@ -46,7 +46,7 @@ const Footer = () => {
       <div className='flex flex-col items-center gap-6 w-full mb-8 text-[#1a1a1a] text-base md:text-lg'>
         <div className="w-[90%] md:w-[80%] h-[3px] bg-[#57697b99] mt-6"></div>
         <hr className='w-[90%] md:w-[80%] border-none rounded-[10px] h-[3px] text-[#000000cc]' />
-        <p className='text-center'>Copyright @ 2024 - All Right Reserved</p>
+        <p className='text-center'>© {new Date().getFullYear()} - All Rights Reserved</p>
       </div>
     </div>
   );
