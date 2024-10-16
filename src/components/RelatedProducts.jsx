@@ -16,6 +16,8 @@ const RelatedProducts = () => {
             image={item.image} 
             new_price={item.new_price} 
             old_price={item.old_price} 
+            rating={item.rating} // Passed rating
+            reviewCount={item.reviewCount} // Passed review count
           />
         ))}
       </div>
