@@ -25,7 +25,7 @@ const Item = (props) => {
                 </div>
             </div>
 
-            <div className='flex items-center justify-start gap-1 mt-2'>
+            <div className='flex items-center justify-start gap-1 mt-3'>
                 {Array.from({ length: 5 }, (_, index) => (
                     <img
                         key={index}
@@ -37,8 +37,8 @@ const Item = (props) => {
             </div>
 
             {/* Review Count */}
-            <div className='text-black text-sm text-left mt-1 ml-1'>
-                ({props.reviewCount} reviews)
+            <div className='text-[#8c8c8c] font-extrabold text-xs text-left mt-1 ml-1'>
+                {props.reviewCount} reviews
             </div>
             
         </div>
