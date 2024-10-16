@@ -30,7 +30,7 @@ const ShopCategory = (props) => {
       </div>
 
       {/* Updated grid settings for spacing on mobile */}
-      <div className='mt-[20px] mb-[20px] mx-10 md:mx-40 grid grid-cols-2 md:grid-cols-4 gap-5'>
+      <div className='mt-[20px] mb-[20px] mx-10 md:mx-40 flex flex-wrap justify-center gap-6'>
         {all_product.map((item, i) => {
           if (props.category === item.category) {
             return (
